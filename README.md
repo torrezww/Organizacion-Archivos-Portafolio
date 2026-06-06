@@ -7,6 +7,7 @@ Portafolio de Arquitectura y Organización de Archivos - Semestre 2026
 
 Proyecto 1: Sistema de Consulta de Ordenes de un Restaurante de Comida Mexicana. PHP, Python, HTML5, JavaScript. .txt, .php, .py, .css. https://github.com/torrezww/Organizacion-Archivos-Portafolio/tree/main/Proyecto1-Data%20Bridge
 
-Proyecto 2: Sistema de Auditoría y Control de Acceso. Python, PHP, HTML5. .json, .txt, .py, .php. 
+Proyecto 2: Sistema de Auditoría y Control de Acceso. Python, PHP, HTML5. .json, .txt, .py, .php. https://github.com/torrezww/Organizacion-Archivos-Portafolio/tree/main/Proyecto2-ABPjControlDeAcceso
+
 Proyecto 3:
 Proyecto 4:
