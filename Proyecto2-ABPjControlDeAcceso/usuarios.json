@@ -1,0 +1,44 @@
+[
+  {
+    "id_tarjeta": "12345",
+    "nombre_empleado": "Roberto Sánchez",
+    "departamento": "Recepción",
+    "nivel_seguridad": 1,
+    "password": "recepcion2026"
+  }
+  {
+    "id_tarjeta": "45789",
+    "nombre_empleado": "Lucía Fernández",
+    "departamento": "Mantenimiento",
+    "nivel_seguridad": 1,
+    "password": "manteLucia"
+  },
+  {
+    "id_tarjeta": "34905",
+    "nombre_empleado": "Miguel Torres",
+    "departamento": "Producción",
+    "nivel_seguridad": 2,
+    "password": "prodMiguel"
+  },
+  {
+    "id_tarjeta": "78930",
+    "nombre_empleado": "Sofía Ramírez",
+    "departamento": "Recursos Humanos",
+    "nivel_seguridad": 2,
+    "password": "rrhhSofia"
+  },
+  {
+    "id_tarjeta": "38940",
+    "nombre_empleado": "Elena Martínez",
+    "departamento": "Dirección General",
+    "nivel_seguridad": 3,
+    "password": "dirElena"
+  },
+  {
+    "id_tarjeta": "13874",
+    "nombre_empleado": "Javier López",
+    "departamento": "Seguridad Interna",
+    "nivel_seguridad": 3,
+    "password": "segJavier"
+  }
+]
