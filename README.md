@@ -1,6 +1,6 @@
 # Organizacion-Archivos-Portafolio
 Portafolio de Arquitectura y Organización de Archivos - Semestre 2026
 
-Nombre Tutor: Jesus Salas Marin
-Nombre Alumno: Jose Angel Torres Cortez - 4to Semestre
-Carrera: Informatica
+- Nombre Tutor: Jesus Salas Marin
+- Nombre Alumno: Jose Angel Torres Cortez - 4to Semestre
+- Carrera: Informatica
