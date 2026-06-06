@@ -11,4 +11,4 @@ Proyecto 2: Sistema de Auditoría y Control de Acceso. Python, PHP, HTML5. .json
 
 Proyecto 3: Analizador de Ventas y Generador de Reportes Estadísticos. Tecnologías: Python (Pandas, Matplotlib). Formatos de archivo: .csv, .py. Enlace: https://github.com/torrezww/Organizacion-Archivos-Portafolio/tree/main/Proyecto3-ActIntegradoraDeEvaluacion
 
-Proyecto 4:
+Proyecto 4: Banco de Pruebas y Benchmarking de Rendimiento Hospitalario. Tecnologías: Python (pandas, matplotlib, tabulate). Formatos de archivo: .csv, vs., .json. Enlace: 
