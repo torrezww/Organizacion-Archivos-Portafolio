@@ -9,5 +9,6 @@ Proyecto 1: Sistema de Consulta de Ordenes de un Restaurante de Comida Mexicana.
 
 Proyecto 2: Sistema de Auditoría y Control de Acceso. Python, PHP, HTML5. .json, .txt, .py, .php. https://github.com/torrezww/Organizacion-Archivos-Portafolio/tree/main/Proyecto2-ABPjControlDeAcceso
 
-Proyecto 3:
+Proyecto 3: Analizador de Ventas y Generador de Reportes Estadísticos. Tecnologías: Python (Pandas, Matplotlib). Formatos de archivo:.csv, .py. Enlace:
+
 Proyecto 4:
