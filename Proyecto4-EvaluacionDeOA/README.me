@@ -1,1 +1,26 @@
+# Instituto tecnologico superior de lerdo
+Portafolio de Arquitectura y Organización de Archivos - Semestre 2026
 
+- Nombre Tutor: Jesus Salas Marin
+- Nombre Alumno: Jose Angel Torres Cortez - 4to Semestre
+- Carrera: Informatica
+
+1. Introducción
+Este informe técnico detalla el diseño, desarrollo y evaluación experimental de un sistema de software clínico diseñado para gestionar, buscar y analizar grandes volúmenes de datos médicos (Big Data). El ecosistema del software se compone de un robusto módulo de generación en Python (main.py y config.py) que funge como simulador masivo para poblar el sistema con exactamente un millón de expedientes de pacientes realistas; un motor analítico basado en la librería Pandas (funciones.py y graficas.py) para la extracción inmediata de métricas de salud pública; y un generador dinámico de reportes clínicos individuales (reportes.py).
+
+La implementación de esta arquitectura responde directamente al núcleo de la competencia del semestre: "Evaluar diferentes organizaciones de archivos aplicándolas a situaciones reales". Al enfrentarnos al reto crítico de un hospital masivo con un millón de pacientes, dejamos de lado los entornos tradicionales de bases de datos para analizar directamente en memoria principal y secundaria cómo se comportan las diferentes estructuras de almacenamiento físico. Este proyecto demuestra de forma empírica que, a gran escala, la elección del formato de archivo y el algoritmo de búsqueda determinan por completo la viabilidad del software, permitiendo analizar debilidades operativas y optimizar el rendimiento mediante el uso de DataFrames y estructuras indexadas en memoria principal sin saturar el procesador.
+
+2. Justificación de Formatos
+Valores Separados por Comas (.csv): Elegimos el formato plano delimitado por comas para pacientes.csv como la columna vertebral de almacenamiento masivo. La razón principal es su extrema ligereza en disco y su estructura secuencial limpia, la cual carece de caracteres redundantes. Esto permite reducir drásticamente el peso del archivo físico y facilita que librerías optimizadas de bajo nivel en C, como las utilizadas por pd.read_csv(), carguen y segmenten millones de registros directamente en la memoria RAM en cuestión de fracciones de segundo, garantizando consultas inmediatas en el área de urgencias.
+
+Notación de Objetos de JavaScript (.json): Evaluamos el uso de pacientes.json como contraparte estructurada. Aunque el formato jerárquico es ideal por su legibilidad humana y su mapeo directo a diccionarios en Python, demostró ser inviable para la persistencia masiva en escenarios de Big Data debido al fenómeno del Overhead (sobrecarga estructural). El requerimiento de almacenar llaves repetitivas y corchetes por cada uno del millón de registros satura innecesariamente el disco y ralentiza exponencialmente los tiempos de carga y parseo del archivo físico.
+
+3. Estimación de Uso y Escalabilidad (Proyección Numérica)
+El script de simulación demostró que la creación de un millón ($1,000,000$) de expedientes médicos genera un archivo .csv de aproximadamente 81.5 MB, frente a un masivo archivo .json que supera los 254 MB debido a la redundancia de su sintaxis estructural.
+
+Análisis de Complejidad Temporal y Escalabilidad:Al usar la organización secuencial del CSV combinada con Pandas, la búsqueda por ID o por coincidencia de nombre se optimiza en memoria principal mediante arreglos contiguos. Si el hospital mantuviera una consulta manual lineal recorriendo línea por línea en texto plano con un bucle tradicional, la complejidad temporal sería de tipo lineal $O(N)$, provocando esperas inaceptables de varios segundos en emergencias médicas. Al mapear los datos estructurados en un DataFrame, el sistema vectoriza las búsquedas reduciendo los tiempos a milisegundos.Sin embargo, si el volumen escala a 10 millones de pacientes, la carga completa inicial del archivo en memoria RAM mediante read_csv() generará un cuello de botella por hardware. Para mitigar este comportamiento en un entorno clínico de producción masiva, se requeriría implementar lecturas por bloques (chunksize) o un índice binario físico en el disco duro.
+
+4. Conclusiones
+El desarrollo de este sistema hospitalario de procesamiento masivo nos permitió comprender la enorme diferencia que existe entre manipular datos a pequeña escala y diseñar soluciones para entornos con millones de registros. Aprendimos que antes de delegar el trabajo a un motor relacional, es fundamental que un ingeniero de software comprenda el impacto físico que los formatos de almacenamiento (como la sobrecarga sintáctica del JSON frente a la pureza del CSV) ejercen sobre el procesador y la memoria RAM del servidor.
+
+Concluimos que el uso de archivos planos CSV estructurados con procesamiento vectorizado en memoria RAM es una solución extraordinariamente ágil, portátil y eficiente para el análisis de Big Data en instituciones de salud de mediana y gran escala. Este proyecto consolida nuestro criterio analítico, dotándonos de la madurez técnica necesaria para evaluar cuándo las optimizaciones a bajo nivel en el manejo de archivos físicos son suficientes para dar soporte inmediato a una operación crítica, y en qué punto el volumen de transacciones justifica la transición hacia infraestructuras distribuidas más complejas.
